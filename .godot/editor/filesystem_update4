@@ -1,7 +1,6 @@
-res://Scene/Player.tscn
-res://Script/Player.gd
 res://Scene/playground.tscn
-res://Scene/Obtiscale.tscn
-res://Scene/Enemy.tscn
-res://Scene/Enemy.gd
 res://Script/Enemy.gd
+res://Scene/Enemy.tscn
+res://Scene/playground.gd
+res://Script/Player.gd
+res://Scene/Player.tscn

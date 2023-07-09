@@ -3,10 +3,10 @@ extends CharacterBody2D
 var speed = 60
 var player_chase = false
 var player = null
-func _physics_process(delta):
+func _physics_process(_delta):
 	if player_chase:
 		position += (player.position - position)/ speed
-
+		
 
 
 func _on_area_2d_body_entered(body):
