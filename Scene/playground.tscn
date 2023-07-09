@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://du150tbg6pq5q"]
+
+[ext_resource type="PackedScene" uid="uid://b08kbdm1bltqg" path="res://Scene/Player.tscn" id="1_426nv"]
+[ext_resource type="PackedScene" uid="uid://cggq2rl2okihv" path="res://Scene/Obtiscale.tscn" id="2_y8qcb"]
+[ext_resource type="PackedScene" uid="uid://cnsbdcv4okruy" path="res://Scene/Enemy.tscn" id="3_a8wmr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_426nv")]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_y8qcb")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_a8wmr")]
+position = Vector2(912, 256)
