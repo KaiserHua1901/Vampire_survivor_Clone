@@ -1,14 +1,24 @@
 extends Node2D
 
+@export var mob_scene: PackedScene
 
-var Enemy_Scene = preload("res://Scene/Enemy.tscn")
 
+func Game_over():
+	pass # Replace with function body.
+func _on_mob_timer_timeout():
+	var mob = mob_scene.instantiate()
+	
+	var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
+	mob_spawn_location.progress_ratio = randf()
+	
+	var direction = mob_spawn_location.rotation + PI / 2
+	
+	# set mod location to random
+	mob.postion = mob_spawn_location.position
+	
+	direction += randf_range(-PI / 4, PI / 4)
+	mob.rotation = direction
+	
 
-# THIS Whole code is not gonna work, because of the fix position of WHERE enemy gonna spawn.
-# So when the player move, the position of the spawn of enemy still the same, so when it will spawn right in front of player.
-#func _on_timer_timeout():
-#	var Enemy = Enemy_Scene.instantiate()
-#	Enemy.position = Vector2(randf_range(-200, 1200), randf_range(-90, 400))
-#	while Enemy.position.x < -80 and Enemy.position.x > 1200 or Enemy.position.y < -100 and Enemy.position.y > 700:
-#		Enemy.position = Vector2(randf_range(-200, 1200), randf_range(-90, 1000))
-#	add_child(Enemy)
+	
+	add_child(mob)
