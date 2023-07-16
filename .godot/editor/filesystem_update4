@@ -1,7 +1,6 @@
-res://Scene/Mod2.tscn
-res://Scene/Player.tscn
-res://Scene/Mod2.gd
 res://Scene/playground.tscn
-res://Script/Player.gd
-res://Scene/playground.gd
+res://Scene/Player.tscn
 res://Scene/Enemy.tscn
+res://Script/Enemy.gd
+res://Script/Player.gd
+res://Scene/Enemy.gd

@@ -1,19 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnsbdcv4okruy"]
+[gd_scene load_steps=4 format=3 uid="uid://cnsbdcv4okruy"]
 
-[ext_resource type="Script" path="res://Script/Enemy.gd" id="1_p2ras"]
 [ext_resource type="Texture2D" uid="uid://cbe47v7gf4lmn" path="res://icon.svg" id="1_r5uij"]
+[ext_resource type="Script" path="res://Scene/Enemy.gd" id="1_uw385"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m1p35"]
 radius = 32.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s8gx8"]
-
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D"]
 rotation = 3.14159
 scale = Vector2(0.008, 0.008)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_p2ras")
+script = ExtResource("1_uw385")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.627451, 0.0352941, 0.156863, 1)
@@ -23,15 +21,3 @@ texture = ExtResource("1_r5uij")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(30.8334, 28.0069)
 shape = SubResource("CircleShape2D_m1p35")
-
-[node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(25.1493, 27.0069)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(-23.2205, -23.2205)
-shape = SubResource("CircleShape2D_s8gx8")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
