@@ -1,6 +1,5 @@
+res://Scene/playground.gd
 res://Scene/playground.tscn
 res://Scene/Player.tscn
 res://Scene/Enemy.tscn
-res://Script/Enemy.gd
-res://Script/Player.gd
 res://Scene/Enemy.gd

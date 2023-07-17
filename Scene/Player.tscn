@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://b08kbdm1bltqg"]
+[gd_scene load_steps=5 format=3 uid="uid://b08kbdm1bltqg"]
 
 [ext_resource type="Texture2D" uid="uid://cbe47v7gf4lmn" path="res://icon.svg" id="1_eujki"]
 [ext_resource type="Script" path="res://Script/Player.gd" id="1_u4hnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tm42p"]
 size = Vector2(64, 64)
+
+[sub_resource type="Curve2D" id="Curve2D_8onhs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -440, -256, 0, 0, 0, 0, 424, -256, 0, 0, 0, 0, 424, 256, 0, 0, 0, 0, -448, 256, 0, 0, 0, 0, -440, -256)
+}
+point_count = 5
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(560, 328)
@@ -23,3 +29,9 @@ shape = SubResource("RectangleShape2D_tm42p")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.49, 1.49)
+
+[node name="SpawnEnemy" type="Path2D" parent="."]
+curve = SubResource("Curve2D_8onhs")
+
+[node name="SpawnLocation" type="PathFollow2D" parent="SpawnEnemy"]
+position = Vector2(-440, -256)
